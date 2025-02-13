@@ -29,7 +29,7 @@ class WaveformTest < Test::Unit::TestCase
   
   def test_generates_waveform
     Waveform.generate(fixture("sample.wav"), output("waveform_from_audio_source.png"))
-    assert File.exists?(output("waveform_from_audio_source.png"))
+    assert File.exist?(output("waveform_from_audio_source.png"))
       
     image = open_png(output("waveform_from_audio_source.png"))
     assert_equal ChunkyPNG::Color.from_hex(Waveform::DefaultOptions[:color]), image[60, 120]
@@ -38,7 +38,7 @@ class WaveformTest < Test::Unit::TestCase
     
   def test_generates_waveform_from_mono_audio_source_via_peak
     Waveform.generate(fixture("mono_sample.wav"), output("waveform_from_mono_audio_source_via_peak.png"))
-    assert File.exists?(output("waveform_from_mono_audio_source_via_peak.png"))
+    assert File.exist?(output("waveform_from_mono_audio_source_via_peak.png"))
 
     image = open_png(output("waveform_from_mono_audio_source_via_peak.png"))
     assert_equal ChunkyPNG::Color.from_hex(Waveform::DefaultOptions[:color]), image[60, 120]
@@ -47,7 +47,7 @@ class WaveformTest < Test::Unit::TestCase
 
   def test_generates_waveform_from_mono_audio_source_via_rms
     Waveform.generate(fixture("mono_sample.wav"), output("waveform_from_mono_audio_source_via_rms.png"), :method => :rms)
-    assert File.exists?(output("waveform_from_mono_audio_source_via_rms.png"))
+    assert File.exist?(output("waveform_from_mono_audio_source_via_rms.png"))
 
     image = open_png(output("waveform_from_mono_audio_source_via_rms.png"))
     assert_equal ChunkyPNG::Color.from_hex(Waveform::DefaultOptions[:color]), image[60, 120]

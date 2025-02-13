@@ -82,6 +82,10 @@ Sample sound file used in tests is in the Public Domain from soundbible.com: <ht
 Changes
 =======
 
+0.1.3
+-----
+  * Added support for Ruby 3.2
+
 0.1.2
 -----
   * Added more helpful deprecation notice for non-WAV audio files
